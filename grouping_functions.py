@@ -2,6 +2,12 @@ from hidden_info import *
 from accepted_groups import accepted_groups
 from math import floor, ceil
 
+import itertools
+
+accepted_num_hosts_per_group = [1, 2, 3]
+
+
+
 # [[H, P], [H, P], ...]
 def singular_grouping(hosts=hosts_hidden, participants=participants_hidden):
     grouping=[]
@@ -19,56 +25,72 @@ def singular_grouping(hosts=hosts_hidden, participants=participants_hidden):
 
 def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
     grouping=[]
+    print("h3i")
+    # Find all the combinations of numbers that add up to the target sum
+    for i in range(1,hosts+1):
+        for combination in itertools.combinations_with_replacement(accepted_num_hosts_per_group, i):
+            if sum(combination) == hosts:
+                print(combination)
 
 
-    pot_max_grouping_with_sing_3s=0
-    # Gi enkeltfolk 3, holde følge med gjennomsnittet til enkeltfolk - Gjennomsnittet bør være minst 1.5
-    for i in range(1, hosts):
-        print(participants-3*i)
-        print(hosts-i)
-        remaining_participants_per_host=(participants-3*i)/(hosts-i)
-        if (remaining_participants_per_host<1  or (hosts-i)==1 and (participants-3*i)<=2):
-            break
-        else:
-            pot_max_grouping_with_sing_3s=i
+    # pot_max_grouping_with_sing_3s=0
+    # # Gi enkeltfolk 3, holde følge med gjennomsnittet til enkeltfolk - Gjennomsnittet bør være minst 1.5
+    # for i in range(1, hosts):
+    #     print(participants-3*i)
+    #     print(hosts-i)
+    #     remaining_participants_per_host=(participants-3*i)/(hosts-i)
+    #     if (remaining_participants_per_host<1  or (hosts-i)<=1 and (participants-3*i)<=2):
+    #         break
+    #     else:
+    #         pot_max_grouping_with_sing_3s=i
 
-    if (pot_max_grouping_with_sing_3s!=0):
-        for j in range(1, pot_max_grouping_with_sing_3s):
-            grouping_with_sing_3s=[[1,3] for i in range(j)]
-            # print(grouping_with_sing_3s)
+    # if (pot_max_grouping_with_sing_3s!=0):
 
-            max_host_after_3=ceil((hosts-j)/2)
-            # telle nedover alle starter på største og teller ned
-            grouping_with_sing_3s.append([[3,5] for i in range(max_host_after_3)])
-            print(grouping_with_sing_3s)
-            while (sum([sublist[0] for sublist in grouping_with_sing_3s]>hosts):
-                if (grouping_with_sing_3s[-1][0]==3):
-                    grouping_with_sing_3s[-1]=[2,6]
-                else:
-                    grouping_with_sing_3s.pop()
-
-            # if (sum([sublist[0] for sublist in grouping_with_sing_3s]==hosts)):
-            #     break    
+    #     max_host_after_3=ceil((hosts-j)/2)
 
 
-    pot_max_grouping_with_sing_4s=0
-    # Gi enkeltfolk 3, holde følge med gjennomsnittet til enkeltfolk - Gjennomsnittet bør være minst 1.5
-    for i in range(1, hosts):
-        # print(participants-4*i)
-        # print(hosts-i)
-        remaining_participants_per_host=(participants-4*i)/(hosts-i)
-        if (remaining_participants_per_host<1 or (hosts-i)==1 and (participants-3*i)<=2):
-            break
-        else:
-            pot_max_grouping_with_sing_4s=i
+    #     # for j in range(1, pot_max_grouping_with_sing_3s):
+    #     #     grouping_with_sing_3s=[[1,3] for i in range(j)]
+    #     #     # print(grouping_with_sing_3s)
 
-    # print(pot_max_grouping_with_sing_3s)
-    # print(pot_max_grouping_with_sing_4s)
+    #     #     max_host_after_3=ceil((hosts-j)/2)
+    #     #     # telle nedover alle starter på største og teller ned
+    #     #     for i in range(max_host_after_3):
+    #     #         grouping_with_sing_3s.append([3,5])
+    #     #     print(grouping_with_sing_3s)
+    #     #     while (sum([sublist[0] for sublist in grouping_with_sing_3s])>hosts):
+    #     #         if (grouping_with_sing_3s[-1][0]==3):
+    #     #             grouping_with_sing_3s[-1]=[2,6]
+    #     #         elif (grouping_with_sing_3s[-1][0]==2):
+    #     #             grouping_with_sing_3s.pop()
+    #     #         else:
+    #     #             print("break")
+    #     #             break
+    #     #     print(hosts)
+    #     #     print(grouping_with_sing_3s)
+
+    #         # if (sum([sublist[0] for sublist in grouping_with_sing_3s]==hosts)):
+    #         #     break    
 
 
-    # Deretter gå igjennom og prøv liste med aksepterte grupper
+    # pot_max_grouping_with_sing_4s=0
+    # # Gi enkeltfolk 3, holde følge med gjennomsnittet til enkeltfolk - Gjennomsnittet bør være minst 1.5
+    # for i in range(1, hosts):
+    #     # print(participants-4*i)
+    #     # print(hosts-i)
+    #     remaining_participants_per_host=(participants-4*i)/(hosts-i)
+    #     if (remaining_participants_per_host<1 or (hosts-i)==1 and (participants-3*i)<=2):
+    #         break
+    #     else:
+    #         pot_max_grouping_with_sing_4s=i
 
-    # Bare prøve liste med aksepterte gruppper  
+    # # print(pot_max_grouping_with_sing_3s)
+    # # print(pot_max_grouping_with_sing_4s)
+
+
+    # # Deretter gå igjennom og prøv liste med aksepterte grupper
+
+    # # Bare prøve liste med aksepterte gruppper  
 
     return grouping
 
@@ -76,3 +98,5 @@ def small_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
     grouping=[]
 
     return grouping
+
+

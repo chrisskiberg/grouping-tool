@@ -1,10 +1,11 @@
 from hidden_info import *
-from accepted_groups import accepted_groups
+from accepted_groups import *
 from math import floor, ceil
 
 import itertools
 
 accepted_num_hosts_per_group = [1, 2, 3]
+accepted_num_parts_per_group = [2, 3, 4, 5, 6]
 
 
 
@@ -25,12 +26,46 @@ def singular_grouping(hosts=hosts_hidden, participants=participants_hidden):
 
 def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
     grouping=[]
-    print("h3i")
+    possible_combination_hosts=[]
+    possible_combination_parts=[]
+
+
+    shortest_pos_comb=0
+    longest_pos_comb=0
+    
     # Find all the combinations of numbers that add up to the target sum
-    for i in range(1,hosts+1):
+    for i in range(1, hosts):
         for combination in itertools.combinations_with_replacement(accepted_num_hosts_per_group, i):
             if sum(combination) == hosts:
-                print(combination)
+                if (shortest_pos_comb==0 or len(combination)<shortest_pos_comb):
+                    shortest_pos_comb=len(combination)
+                if (longest_pos_comb==0 or longest_pos_comb<len(combination)): 
+                    longest_pos_comb=len(combination)
+                possible_combination_hosts.append(list(combination))
+    print(possible_combination_hosts)
+
+    for i in range(shortest_pos_comb, longest_pos_comb+1):
+        for combination in itertools.combinations_with_replacement(accepted_num_parts_per_group, i):
+            if sum(combination) == participants:
+                possible_combination_parts.append(list(combination))
+                #  problem - Nå er det bare en måte å arrangere de på, men for å matche må arrangere på flere måter
+                # Kan prøve å finne riktig element, gi til noen og pope til noen elementer, hvis ingen matcher da er det ikke mulig
+                    # Men en mengde participants kan matche med flere hosts  
+    print(possible_combination_parts)    
+    print("h3i")
+
+    # all_possible_combinations=[]
+    # for i in range(len(possible_combination)):
+    #     possible_combination_parts_i=[]
+    #     for j in range(len(possible_combination[i])):
+    #         if (possible_combination[i][j]==1):
+    #             possible_combination_parts_i.append([3,4])
+    #         elif (possible_combination[i][j]==2):
+    #             possible_combination_parts_i.append([2,3,4,5,6])
+    #         elif (possible_combination[i][j]==3):
+    #             possible_combination_parts_i.append([4,5])
+    #     all_possible_combinations.append(possible_combination_parts_i)
+    #     print("hei")
 
 
     # pot_max_grouping_with_sing_3s=0

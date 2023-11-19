@@ -26,42 +26,44 @@ def singular_grouping(hosts=hosts_hidden, participants=participants_hidden):
 
 def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
     grouping=[]
-    possible_combination_hosts=[]
-    possible_combination_parts=[]
 
     # combs = list(itertools.product({'a', 'b', 'c'}, repeat=10))
     # for in range() - a, aa, aaa, aaaa, aaaaa
-    combs = list(itertools.product({130, 140, 221, 230, 240, 251, 262, 343, 352}, repeat=3))
     # print(combs)
     # combs_sorted=[sorted (x) for x in combs]
-    combs_sorted=[tuple (sorted (x)) for x in combs]
     # print(combs_sorted)
-    combs = list(set(combs_sorted))
     # print(combs)
     
     combs_HP={}
 
-    for i in range(len(combs)):
-        combs_HP_i=[]
-        priority_i=0
-        host_sum_i=0
-        parts_sum_i=0
-        for j in range(len(combs[i])):
-            priority_i-=int(str(combs[i][j])[2])
-            combs_HP_i.append([int(str(combs[i][j])[0]), int(str(combs[i][j])[1])])
-            host_sum_i+=int(str(combs[i][j])[0])
-            parts_sum_i+=int(str(combs[i][j])[1])
-        combs_HP_i.insert(0, priority_i)
-        combs_HP_i.insert(1, host_sum_i)
-        combs_HP_i.insert(2, parts_sum_i)
+    for a in range(2,5):
+        combs = list(itertools.product({130, 140, 221, 230, 240, 251, 262, 343, 352}, repeat=a))
+        combs_sorted=[tuple (sorted (x)) for x in combs]
+        combs = list(set(combs_sorted))
+        print(combs)
+        print("")
+        for i in range(len(combs)):
+            combs_HP_i=[]
+            priority_i=0
+            host_sum_i=0
+            parts_sum_i=0
+            for j in range(len(combs[i])):
+                priority_i-=int(str(combs[i][j])[2])
+                combs_HP_i.append([int(str(combs[i][j])[0]), int(str(combs[i][j])[1])])
+                host_sum_i+=int(str(combs[i][j])[0])
+                parts_sum_i+=int(str(combs[i][j])[1])
+            combs_HP_i.insert(0, priority_i)
+            combs_HP_i.insert(1, host_sum_i)
+            combs_HP_i.insert(2, parts_sum_i)
+            combs_HP_i.insert(3, len(combs[i]))
 
-        if (host_sum_i in combs_HP and parts_sum_i in combs_HP[host_sum_i]):
-            combs_HP[host_sum_i][parts_sum_i].append(combs_HP_i)
-        elif (host_sum_i in combs_HP):
-            combs_HP[host_sum_i][parts_sum_i]=[combs_HP_i]
-        else:
-            combs_HP[host_sum_i]={}
-            combs_HP[host_sum_i][parts_sum_i]=[combs_HP_i]
+            if (host_sum_i in combs_HP and parts_sum_i in combs_HP[host_sum_i]):
+                combs_HP[host_sum_i][parts_sum_i].append(combs_HP_i)
+            elif (host_sum_i in combs_HP):
+                combs_HP[host_sum_i][parts_sum_i]=[combs_HP_i]
+            else:
+                combs_HP[host_sum_i]={}
+                combs_HP[host_sum_i][parts_sum_i]=[combs_HP_i]
 
         # combs_HP[host_sum_i][parts_sum_i]=combs_HP_i
 
@@ -82,7 +84,41 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
         for parts_key in combs_HP[hosts_key]:
             combs_HP[hosts_key][parts_key].sort(key = lambda x: x[0], reverse=True)
             # print(hosts_key, parts_key)
-    print(combs_HP)
+    # print(combs_HP)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     # accepted_1_groups = [[1,3], [1,4]]

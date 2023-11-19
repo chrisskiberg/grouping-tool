@@ -3,6 +3,7 @@ NEXT:
 TODO: Use two itertools.comb and match with accepted group
 TODO: Faster to make algorithm straight from accepted groups
 TODO: Potential problem with priority - It might be easier for the short groups to get more priority?
+TODO: Wants hosts to have the closest average amount of participants 
 
 Future ideas 
 TODO: Sort most recommended group/groups to least recommended group/groups 

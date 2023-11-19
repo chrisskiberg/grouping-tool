@@ -38,8 +38,9 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
     # print(combs_sorted)
     combs = list(set(combs_sorted))
     # print(combs)
+    
+    combs_HP={}
 
-    combs_HP=[]
     for i in range(len(combs)):
         combs_HP_i=[]
         priority_i=0
@@ -48,10 +49,33 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
         for j in range(len(combs[i])):
             priority_i-=int(str(combs[i][j])[2])
             combs_HP_i.append([int(str(combs[i][j])[0]), int(str(combs[i][j])[1])])
+            host_sum_i+=int(str(combs[i][j])[0])
+            parts_sum_i+=int(str(combs[i][j])[1])
         combs_HP_i.insert(0, priority_i)
-        combs_HP.append(combs_HP_i)
+        combs_HP_i.insert(1, host_sum_i)
+        combs_HP_i.insert(2, parts_sum_i)
+
+        if (host_sum_i in combs_HP and parts_sum_i in combs_HP[host_sum_i]):
+            combs_HP[host_sum_i][parts_sum_i].append(combs_HP_i)
+        elif (host_sum_i in combs_HP):
+            combs_HP[host_sum_i][parts_sum_i]=[combs_HP_i]
+        else:
+            combs_HP[host_sum_i]={}
+            combs_HP[host_sum_i][parts_sum_i]=[combs_HP_i]
+
+        # combs_HP[host_sum_i][parts_sum_i]=combs_HP_i
+
+        # combs_3_hosts.insert(parts_sum_i, combs_HP_i)
+
+        # print(combs_HP_i)
+        # combs_HP.append(combs_HP_i)
         # print(priority_i, combs_HP_i)
-        print(combs_HP)
+        # print(combs_HP)
+    print(combs_HP)
+
+
+
+
 
 
 

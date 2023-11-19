@@ -1,0 +1,7 @@
+
+NEXT:
+TODO: Use two itertools.comb and match with accepted group
+
+Future ideas 
+TODO: Sort most recommended group/groups to least recommended group/groups 
+TODO: Save all accepted groups and send a GET request for the stored groups

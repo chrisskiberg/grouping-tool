@@ -54,6 +54,29 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
     print(possible_combination_parts)    
     print("h3i")
 
+    for i in range(len(possible_combination_hosts)):
+        for j in range(len(possible_combination_parts)):
+            if (len(possible_combination_hosts[i])==len(possible_combination_parts[j])):
+                possible_parts=[[] for i in range(len(possible_combination_hosts[i]))]
+                for l in range(len(possible_combination_hosts[i])):
+                    if (possible_combination_hosts[i][l]==1):
+                        common = [x for x in possible_combination_parts[j] if x in accepted_1_host_parts]
+                        print(possible_combination_hosts[i][l], common)
+                    elif (possible_combination_hosts[i][l]==2):
+                        common = [x for x in possible_combination_parts[j] if x in accepted_2_host_parts]
+                        print(possible_combination_hosts[i][l], common)
+                    elif (possible_combination_hosts[i][l]==3):
+                        common = [x for x in possible_combination_parts[j] if x in accepted_3_host_parts]
+                        print(possible_combination_hosts[i][l], common)
+                    if (len(common)==0):
+                        break
+                print(possible_combination_hosts[i])
+                print(possible_combination_parts[j])
+                # print(possible_parts)
+            elif (len(possible_combination_hosts[i])<len(possible_combination_parts[j])): 
+                break
+
+
     # all_possible_combinations=[]
     # for i in range(len(possible_combination)):
     #     possible_combination_parts_i=[]

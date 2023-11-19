@@ -31,7 +31,7 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
 
     # combs = list(itertools.product({'a', 'b', 'c'}, repeat=10))
     # for in range() - a, aa, aaa, aaaa, aaaaa
-    combs = list(itertools.product({130, 140, 221, 230, 240, 251, 262, 343, 352}, repeat=2))
+    combs = list(itertools.product({130, 140, 221, 230, 240, 251, 262, 343, 352}, repeat=3))
     # print(combs)
     # combs_sorted=[sorted (x) for x in combs]
     combs_sorted=[tuple (sorted (x)) for x in combs]
@@ -71,13 +71,18 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
         # combs_HP.append(combs_HP_i)
         # print(priority_i, combs_HP_i)
         # print(combs_HP)
+
+    # for alle host keys
+        # for alle participant key
+            # sort med respekt til priority
+
+    # combs_HP_sort_test=[[-4, 5, 9, [2, 5], [3, 4]],[-2, 5, 9, [2, 4], [3, 5]]]
+    # print(combs_HP_sort_test)
+    for hosts_key in combs_HP:
+        for parts_key in combs_HP[hosts_key]:
+            combs_HP[hosts_key][parts_key].sort(key = lambda x: x[0], reverse=True)
+            # print(hosts_key, parts_key)
     print(combs_HP)
-
-
-
-
-
-
 
 
     # accepted_1_groups = [[1,3], [1,4]]

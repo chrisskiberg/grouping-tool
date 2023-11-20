@@ -3,14 +3,13 @@ NEXT:
 TODO: Count up algorithm
 TODO: Potential problem with priority - It might be easier for the short groups to get more priority?
 TODO: Wants hosts to have the closest average amount of participants
-TODO: Store values in csv file
 
 Future ideas 
-TODO: Sort most recommended group/groups to least recommended group/groups 
-TODO: Save all accepted groups and send a GET request for the stored groups
 
 ----------------------------------
-
+DONE: Sort most recommended group/groups to least recommended group/groups 
+DONE: Save all accepted groups and send a GET request for the stored groups
+DONE: Store values in csv file
 DONE: Use two itertools.comb and match with accepted group
 DONE: Faster to make algorithm straight from accepted groups
 

@@ -12,9 +12,15 @@ min_people_per_group=3
 
 participants_per_host=participants/hosts
 
-groups=[]
 
-count_up_groups(hosts, participants)
+
+# count_up_groups(hosts, participants)
+groups=medium_size_grouping(hosts, participants)
+save_medium_size_grouping(groups)
+
+print("hei")
+
+
 
 # # Groups with only one host, when there are many participants per host 
 # # More hosts than one might make the group too big
@@ -24,7 +30,6 @@ count_up_groups(hosts, participants)
     
 # # Groups with one host, when there are a medium number of participants per host 
 # if (2<=participants_per_host and participants_per_host<=3):
-#     groups.append(medium_size_grouping(hosts, participants))
 #     # print(groups)
 
 # if (1<=participants_per_host and participants_per_host<2):

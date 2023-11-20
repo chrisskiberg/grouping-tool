@@ -13,9 +13,24 @@ body {
 <body>
 
 <h1>My Website</h1>
-<p>A website created by me.</p>
 
-<script src="myscripts1.js"></script>
+<label for="tentacles">Antall språkverter:</label>
+<input type="number" id="spraakverter" name="spraakverter" min="3" max="10" />
+<br>	
+<br>	
+<label for="tentacles">Antall deltakere:</label>
+<input type="number" id="deltakere" name="deltakere" min="4" max="30" />
+<br>	
+<br>	
+
+<button onclick="suggest_groups()">Send inn</button>
+
+<p id="suggestion_1"></p>
+<p id="suggestion_2"></p>
+<p id="suggestion_3"></p>
+
+
+<script src="myscript.js"></script>
 
 </body>
 </html>

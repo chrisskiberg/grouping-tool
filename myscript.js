@@ -262,6 +262,7 @@ function suggest_groups() {
             grouping[i][1]+=1
         }
 
+        document.getElementById("suggestion_1").innerHTML="Antall grupper: " + grouping.length + " - " 
         for (let i = 0; i < grouping.length; i++) {
             document.getElementById("suggestion_1").innerHTML+="[" + grouping[i] + "]    "
         }

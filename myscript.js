@@ -3,7 +3,7 @@ groups_3 = {
     g3_6: [[0, 3, 6, 2, [1, 3], [2, 3]], [-1, 3, 6, 2, [1, 2], [2, 4]], [-1, 3, 6, 2, [1, 4], [2, 2]]], 
     g3_10: [[0, 3, 10, 3, [1, 3], [1, 3], [1, 4]], [-1, 3, 10, 3, [1, 2], [1, 4], [1, 4]], [-2, 3, 10, 2, [1, 4], [2, 6]]], 
     g3_5: [[-1, 3, 5, 2, [1, 3], [2, 2]], [-1, 3, 5, 2, [1, 2], [2, 3]], NaN], 
-    g3_4: [[-2, 3, 4, 2, [1, 2], [2, 2]], NaN, NaN], 
+    g3_4: [[-2, 3,   4, 2, [1, 2], [2, 2]], NaN, NaN], 
     g3_8: [[0, 3, 8, 2, [1, 4], [2, 4]], [-1, 3, 8, 2, [1, 3], [2, 5]], [-1, 3, 8, 3, [1, 2], [1, 3], [1, 3]]], 
     g3_9: [[0, 3, 9, 3, [1, 3], [1, 3], [1, 3]], [-1, 3, 9, 2, [1, 4], [2, 5]], [-1, 3, 9, 3, [1, 2], [1, 3], [1, 4]]], 
     g3_11: [[0, 3, 11, 3, [1, 3], [1, 4], [1, 4]], NaN, NaN], 
@@ -243,7 +243,7 @@ function suggest_groups() {
     document.getElementById("suggestion_2").innerHTML=""
     document.getElementById("suggestion_3").innerHTML=""
 
-    console.log(typeof(hosts))
+    // console.log(typeof(hosts))
 
     if (3<=participants/hosts && hosts!=0) {
         var grouping=[]
@@ -262,27 +262,34 @@ function suggest_groups() {
             grouping[i][1]+=1
         }
 
-        console.log(grouping)
+        for (let i = 0; i < grouping.length; i++) {
+            document.getElementById("suggestion_1").innerHTML+="[" + grouping[i] + "]    "
+        }
+
         // document.getElementById("suggestion_1").innerHTML="Tell opp til" + hosts.toString() + "grupper"
 
+    } else if (participants/hosts<1.0 && 0<participants/hosts) {
+        document.getElementById("suggestion_1").innerHTML="Prøv å bytte om tallene på spåkverter og deltakere"
+        document.getElementById("suggestion_2").innerHTML="og bruk de omvendte gruppene"
+        document.getElementById("suggestion_3").innerHTML="Om dette ikke fungerer er ikke tallene i databasen"
     } else if (hosts!=0 && 3<=hosts && hosts<=10 && 4<=participants && participants<=30)  {
 
         get_suggest_str="g" + hosts.toString() + "_" + participants.toString();
-        if (hosts==3) {
+        if (hosts==3 && groups_3.hasOwnProperty(get_suggest_str)) {
             console.log(groups_3[get_suggest_str][0])
             for (let i = 4; i < groups_3[get_suggest_str][0].length; i++) {
-                document.getElementById("suggestion_1").innerHTML+=groups_3[get_suggest_str][0][i] + "    "
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_3[get_suggest_str][0][i] + "]    "
             }
 
             if (groups_3[get_suggest_str][1]!=NaN) {
                 for (let i = 4; i < groups_3[get_suggest_str][1].length; i++) {
-                    document.getElementById("suggestion_2").innerHTML+=groups_3[get_suggest_str][1][i] + "    "
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_3[get_suggest_str][1][i] + "]    "
                 }
             }
 
             if (groups_3[get_suggest_str][2]!=NaN) {
                 for (let i = 4; i < groups_3[get_suggest_str][2].length; i++) {
-                    document.getElementById("suggestion_3").innerHTML+=groups_3[get_suggest_str][2][i] + "    "
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_3[get_suggest_str][2][i] + "]    "
                 }
             }
 
@@ -327,8 +334,9 @@ function suggest_groups() {
             console.log(get_suggest_str)
         }
 
-        
-    }
+    } else if (0<hosts && hosts<=2) {
+        document.getElementById("suggestion_1").innerHTML="Del inn i grupper selv"
+    } 
 
 
     // document.getElementById("suggestion_1").innerHTML="suggestion_1"

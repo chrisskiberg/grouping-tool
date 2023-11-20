@@ -298,43 +298,167 @@ function suggest_groups() {
 
             // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
             // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
-        } else if (hosts==4) {
+        } else if (hosts==4 && groups_4.hasOwnProperty(get_suggest_str)) {
             console.log(groups_4[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_4[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_4[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_4[get_suggest_str][2].slice(4)
-        } else if (hosts==5) {
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_4[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_4[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_4[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_4[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_4[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_4[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_4[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_4[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_4[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_4[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_4[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+        } else if (hosts==5 && groups_5.hasOwnProperty(get_suggest_str)) {
             console.log(groups_5[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_5[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_5[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_5[get_suggest_str][2].slice(4)
-        } else if (hosts==6) {
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_5[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_5[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_5[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_5[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_5[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_5[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_5[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_5[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_5[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_5[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_5[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
+        } else if (hosts==6 && groups_6.hasOwnProperty(get_suggest_str)) {
             console.log(groups_6[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_6[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_6[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_6[get_suggest_str][2].slice(4)
-        } else if (hosts==7) {
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_6[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_6[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_6[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_6[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_6[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_6[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_6[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_6[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_6[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_6[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_6[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
+        } else if (hosts==7 && groups_7.hasOwnProperty(get_suggest_str)) {
             console.log(groups_7[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_7[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_7[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_7[get_suggest_str][2].slice(4)
-        } else if (hosts==8) {
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_7[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_7[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_7[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_7[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_7[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_7[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_7[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_7[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_7[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_7[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_7[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
+        } else if (hosts==8 && groups_8.hasOwnProperty(get_suggest_str)) {
             console.log(groups_8[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_8[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_8[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_8[get_suggest_str][2].slice(4)
-        } else if (hosts==9) {
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_8[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_8[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_8[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_8[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_8[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_8[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_8[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_8[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_8[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_8[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_8[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
+        } else if (hosts==9 && groups_9.hasOwnProperty(get_suggest_str)) {
             console.log(groups_9[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_9[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_9[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_9[get_suggest_str][2].slice(4)            
-        } else if (hosts==10) {
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_9[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_9[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_9[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_9[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_9[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_9[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_9[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_9[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_9[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_9[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_9[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
+        } else if (hosts==10 && groups_10.hasOwnProperty(get_suggest_str)) {
             console.log(groups_10[get_suggest_str][0])
-            document.getElementById("suggestion_1").innerHTML=groups_10[get_suggest_str][0].slice(4)
-            document.getElementById("suggestion_2").innerHTML=groups_10[get_suggest_str][1].slice(4)
-            document.getElementById("suggestion_3").innerHTML=groups_10[get_suggest_str][2].slice(4)
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_10[get_suggest_str][0][3] + " - "
+            for (let i = 4; i < groups_10[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+="[" + groups_10[get_suggest_str][0][i] + "]    "
+            }
+
+            if (groups_10[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_10[get_suggest_str][1][3] + " - "
+                for (let i = 4; i < groups_10[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+="[" + groups_10[get_suggest_str][1][i] + "]    "
+                }
+            }
+
+            if (groups_10[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_10[get_suggest_str][2][3] + " - "
+                for (let i = 4; i < groups_10[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+="[" + groups_10[get_suggest_str][2][i] + "]    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
         } else {
-            console.log(get_suggest_str)
+            document.getElementById("suggestion_1").innerHTML+="Finner ingen kombinasjoner i databasen"
         }
 
     } else if (0<hosts && hosts<=2) {

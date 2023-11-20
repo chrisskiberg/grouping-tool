@@ -277,17 +277,20 @@ function suggest_groups() {
         get_suggest_str="g" + hosts.toString() + "_" + participants.toString();
         if (hosts==3 && groups_3.hasOwnProperty(get_suggest_str)) {
             console.log(groups_3[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML+="Antall grupper: " + groups_3[get_suggest_str][0][3] + " - "
             for (let i = 4; i < groups_3[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML+="[" + groups_3[get_suggest_str][0][i] + "]    "
             }
 
             if (groups_3[get_suggest_str][1]!=NaN) {
+                document.getElementById("suggestion_2").innerHTML+="Antall grupper: " + groups_3[get_suggest_str][1][3] + " - "
                 for (let i = 4; i < groups_3[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML+="[" + groups_3[get_suggest_str][1][i] + "]    "
                 }
             }
 
             if (groups_3[get_suggest_str][2]!=NaN) {
+                document.getElementById("suggestion_3").innerHTML+="Antall grupper: " + groups_3[get_suggest_str][2][3] + " - "
                 for (let i = 4; i < groups_3[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML+="[" + groups_3[get_suggest_str][2][i] + "]    "
                 }

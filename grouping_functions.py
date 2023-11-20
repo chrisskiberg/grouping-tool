@@ -78,14 +78,45 @@ def medium_size_grouping(hosts=hosts_hidden, participants=participants_hidden):
 
 
 def save_medium_size_grouping(groups):
-    # file = open("groups_combinations.csv", "w")
     groups_df=pd.DataFrame.from_dict({(i,j): groups[i][j] 
                            for i in groups.keys() 
                            for j in groups[i].keys()},
                        orient='index')
     groups_df=groups_df.iloc[:, 0:4]
+    # print(groups_df.iloc[:, 0])
     print(groups_df.head())
-    groups_df.to_csv('groups_combinations.csv')
+
+    file = open("groups_combinations.csv", "w")
+
+    # iterating the columns
+    for row in groups_df.index:
+        file.write("g")
+        file.write(str(row[0]))    
+        file.write("_")    
+        file.write(str(row[1]))  
+        file.write(": [")  
+        file.write(str(groups_df[0][row]))
+        file.write(", ")
+        file.write(str(groups_df[1][row]))
+        file.write(", ")
+        file.write(str(groups_df[2][row]))
+        file.write("], ")
+        file.write("\n")
+
+
+        # print(row[0], end = "_")    
+        # print(row[1], end = ": [")  
+        # print(groups_df[0][row], end=", ")
+        # print(groups_df[1][row], end=", ")
+        # print(groups_df[2][row], end="], ")
+        # print("")
+    file.close()
+
+        # print(groups_df.iloc[row, 1], end = ",")
+        # print(groups_df.iloc[row, 2]end = "] \n")
+ 
+
+    # groups_df.to_csv('groups_combinations.csv')
     # Kan hende at dette er en krevende CSV. Kanskje heller burde gjøre det på min måte
     # Bare velge topp 4
     # Eller bare ha alle kombinasjonene i en JS variabel 

@@ -233,8 +233,107 @@ groups_15 = {
 function suggest_groups() {
     // document.getElementById("demo").innerHTML = "Hello World";
     // console.log("hei")
-    console.log(document.getElementById("spraakverter").value)
-    console.log(document.getElementById("deltakere").value)
+    // console.log(document.getElementById("spraakverter").value)
+    // console.log(document.getElementById("deltakere").value)
+
+    var hosts=parseInt(document.getElementById("hosts").value)
+    var participants=parseInt(document.getElementById("participants").value)
+
+    document.getElementById("suggestion_1").innerHTML=""
+    document.getElementById("suggestion_2").innerHTML=""
+    document.getElementById("suggestion_3").innerHTML=""
+
+    console.log(typeof(hosts))
+
+    if (3<=participants/hosts && hosts!=0) {
+        var grouping=[]
+        var min_participants_per_host=Math.floor(participants/hosts)
+
+        for (let i = 0; i < hosts; i++) {
+            grouping.push([1, min_participants_per_host])
+        }
+
+        // for i in range(hosts):
+        // # print(grouping)
+    
+        var remaining_participants=participants-min_participants_per_host*hosts
+
+        for (let i = 0; i < remaining_participants; i++) {
+            grouping[i][1]+=1
+        }
+
+        console.log(grouping)
+        // document.getElementById("suggestion_1").innerHTML="Tell opp til" + hosts.toString() + "grupper"
+
+    } else if (hosts!=0 && 3<=hosts && hosts<=10 && 4<=participants && participants<=30)  {
+
+        get_suggest_str="g" + hosts.toString() + "_" + participants.toString();
+        if (hosts==3) {
+            console.log(groups_3[get_suggest_str][0])
+            for (let i = 4; i < groups_3[get_suggest_str][0].length; i++) {
+                document.getElementById("suggestion_1").innerHTML+=groups_3[get_suggest_str][0][i] + "    "
+            }
+
+            if (groups_3[get_suggest_str][1]!=NaN) {
+                for (let i = 4; i < groups_3[get_suggest_str][1].length; i++) {
+                    document.getElementById("suggestion_2").innerHTML+=groups_3[get_suggest_str][1][i] + "    "
+                }
+            }
+
+            if (groups_3[get_suggest_str][2]!=NaN) {
+                for (let i = 4; i < groups_3[get_suggest_str][2].length; i++) {
+                    document.getElementById("suggestion_3").innerHTML+=groups_3[get_suggest_str][2][i] + "    "
+                }
+            }
+
+            // document.getElementById("suggestion_2").innerHTML=groups_3[get_suggest_str][1].slice(4)
+            // document.getElementById("suggestion_3").innerHTML=groups_3[get_suggest_str][2].slice(4)
+        } else if (hosts==4) {
+            console.log(groups_4[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_4[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_4[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_4[get_suggest_str][2].slice(4)
+        } else if (hosts==5) {
+            console.log(groups_5[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_5[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_5[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_5[get_suggest_str][2].slice(4)
+        } else if (hosts==6) {
+            console.log(groups_6[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_6[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_6[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_6[get_suggest_str][2].slice(4)
+        } else if (hosts==7) {
+            console.log(groups_7[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_7[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_7[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_7[get_suggest_str][2].slice(4)
+        } else if (hosts==8) {
+            console.log(groups_8[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_8[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_8[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_8[get_suggest_str][2].slice(4)
+        } else if (hosts==9) {
+            console.log(groups_9[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_9[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_9[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_9[get_suggest_str][2].slice(4)            
+        } else if (hosts==10) {
+            console.log(groups_10[get_suggest_str][0])
+            document.getElementById("suggestion_1").innerHTML=groups_10[get_suggest_str][0].slice(4)
+            document.getElementById("suggestion_2").innerHTML=groups_10[get_suggest_str][1].slice(4)
+            document.getElementById("suggestion_3").innerHTML=groups_10[get_suggest_str][2].slice(4)
+        } else {
+            console.log(get_suggest_str)
+        }
+
+        
+    }
+
+
+    // document.getElementById("suggestion_1").innerHTML="suggestion_1"
+    // document.getElementById("suggestion_2").innerHTML="suggestion_2"
+    // document.getElementById("suggestion_3").innerHTML="suggestion_3"
 }
 
 

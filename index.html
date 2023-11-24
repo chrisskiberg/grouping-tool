@@ -37,10 +37,7 @@ body {
   
 <h3>Forklaring på forslagene</h3>
 
-
-<p>Hva betyr: "Antall grupper: X"? Dette betyr hvor mange grupper (X) man kan dele opp alle deltakerne og språkvertene i </p>
-
-
+<p>Hva betyr: "Antall grupper: X"? Dette betyr hvor mange grupper (X) man kan dele opp alle deltakerne og språkvertene i</p>
 
 <p>Hva betyr: "[Y,Z]"? Hvert tall i hakeparentesene representerer antall språkverter Y og deltakere Z i den gruppen. For eksempel betyr [1,3] at det er 1 språkvert og 3 deltakere i den gruppen.</p>
 
@@ -58,9 +55,38 @@ body {
   
 <p>Hvor det er tre grupper med 1 språkvert + 3 deltakere ([1,3]), en gruppe med 1 språkvert + 4 deltakere ([1,4]) og en gruppe med 2 språkverter + 4 deltakere ([2,4])</p>
 
+<h3>Om forslagene og beregning av dem</h3>
+<p>Forslagene er basert på hvor "gode", eller "dårlige", selve gruppene er (fra hvordan gruppene vanligvis deles inn på språkkaféen på Strømmen Biblotek, men også litt fra personlige erfaringer og meninger). Men språkkaféen på Strømmen Biblotek har ingen offisiell mening om hva som er "gode" eller "dårlige" grupper. Og dette er ikke nettsiden til verken språkkaféen på Strømmen Bibliotek eller Strømmen Bibliotek og representerer ingen av den. Dette er en personlig nettside til en av språkvertene. Og selv språkvertene i Strømmen Bibliotek kan ha andre preferanser om hva som er "gode" og "dårlige" grupper.</p>
 
+<p>Selve forslagene er ment som et hjelpemiddel når hoderegningen er vanskelig. Det finnes ingen riktige forslag på akkurat hvordan man bør dele inn grupper. Noen deltakere fungerer for eksempel dårlig i mellomstore grupper fordi dem ikke har gode nok norskkunskaper til formulere seg raskt nok til å ta ordet i samtalen. Og vil ikke klare å engasjere seg særlig i samtalene. Små grupper ([1,2]) kan ha den fordelen at språkverten og deltakerne blir godt kjent med hverandre og språkverten kan gi mer oppmerksomhet til hver deltager, men noen ulemper kan være at det er være vanskeligere å holde i gang selve samtalen, man får mindre perspektiver i samtalene og man blir kjent med litt mindre folk. Og om man har nye språkverter ønsker man kanskje å dele dem inn grupper med to eller flere språkverter, men om man inkluderer dem i "antall språkverter" på denne nettsiden vil ikke forslagene ta høyde for dette. Så del inn etter hva dere tror er best for deres situasjon, og prøv gjerne å eksperimenter litt med forskjellige gruppeinndelinger. </p>
 
+<p>Kombinasjoner for forskjellige grupper er beregnet fra kode i grouping_functions.py. Hver gruppe blir gitt en poengsum på hvor gode eller dårlige de er, basert på subjektive meninger. Poengene straffer "dårlige" grupper hvor:</p>
 
+<ul>
+  <li>For mange deltakere per språkvert</li>
+  <li>For mange språkverter per deltaker</li>
+  <li>For store grupper</li>
+  <li>For små grupper</li>
+</ul>
+
+<p>Og for hvert forslag plusses poengene fra hver gruppe sammen. Og de tre forslagene med best poengsum vinner. Den beste poengsummen er null og den dårligste er den mest negative.</p>
+
+<p>For eksempel for gruppeinndelinger hvor det er 5 språkverter og 10 deltakere er et av forslagene å dele inn i 2 grupper: [2, 6] og [3, 4], hvor gruppene har minus 2 og 3 poeng respektivt og totalt minus 5 poeng. Begge gruppene får minuspoeng fordi dem er for store, og [3,4] får enda et minuspoeng fordi dette er vanligvis for mange språkverter per deltaker. Mens et annet forslag er å dele inn i 3 grupper: [1, 3], [2, 3] og [2, 4], hvor ingen av gruppene mottar minuspoeng siden de er "passe".</p>
+
+<p>Her er poengsummene til hver gruppe: </p>
+
+<ul>
+  <li>[1,2]: -1</li>
+  <li>[1,3]: 0</li>
+  <li>[1,4]: 0</li>
+  <li>[2,2]: -1</li>
+  <li>[2,3]: 0</li>
+  <li>[2,4]: 0</li>
+  <li>[2,5]: -1</li>
+  <li>[2,6]: -2</li>
+  <li>[3,4]: -3</li>
+  <li>[3,5]: -2</li>
+</ul>
   
 <script src="grouping.js"></script>
 

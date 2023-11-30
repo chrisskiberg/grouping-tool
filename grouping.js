@@ -271,11 +271,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_4[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_4[get_suggest_str][0][i] + "]    "
             }
-
+            if (groups_4[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
+            
             if (groups_4[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_4[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_4[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_4[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_4[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -284,6 +290,9 @@ function suggest_groups() {
                 for (let i = 5; i < groups_4[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_4[get_suggest_str][2][i] + "]    "
                 }
+                if (groups_4[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
+                }
             }
 
         } else if (hosts == 5 && groups_5.hasOwnProperty(get_suggest_str)) {
@@ -291,11 +300,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_5[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_5[get_suggest_str][0][i] + "]    "
             }
+            if (groups_5[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_5[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_5[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_5[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_5[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_5[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -304,6 +319,9 @@ function suggest_groups() {
                 for (let i = 5; i < groups_5[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_5[get_suggest_str][2][i] + "]    "
                 }
+                if (groups_5[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
+                }
             }
 
         } else if (hosts == 6 && groups_6.hasOwnProperty(get_suggest_str)) {
@@ -311,11 +329,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_6[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_6[get_suggest_str][0][i] + "]    "
             }
+            if (groups_6[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_6[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_6[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_6[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_6[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_6[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -324,6 +348,9 @@ function suggest_groups() {
                 for (let i = 5; i < groups_6[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_6[get_suggest_str][2][i] + "]    "
                 }
+                if (groups_6[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
+                }
             }
 
         } else if (hosts == 7 && groups_7.hasOwnProperty(get_suggest_str)) {
@@ -331,11 +358,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_7[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_7[get_suggest_str][0][i] + "]    "
             }
+            if (groups_7[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_7[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_7[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_7[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_7[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_7[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -344,6 +377,9 @@ function suggest_groups() {
                 for (let i = 5; i < groups_7[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_7[get_suggest_str][2][i] + "]    "
                 }
+                if (groups_7[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
+                }
             }
 
         } else if (hosts == 8 && groups_8.hasOwnProperty(get_suggest_str)) {
@@ -351,11 +387,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_8[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_8[get_suggest_str][0][i] + "]    "
             }
+            if (groups_8[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_8[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_8[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_8[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_8[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_8[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -364,6 +406,9 @@ function suggest_groups() {
                 for (let i = 5; i < groups_8[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_8[get_suggest_str][2][i] + "]    "
                 }
+                if (groups_8[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
+                }
             }
 
         } else if (hosts == 9 && groups_9.hasOwnProperty(get_suggest_str)) {
@@ -371,11 +416,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_9[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_9[get_suggest_str][0][i] + "]    "
             }
+            if (groups_9[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_9[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_9[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_9[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_9[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_9[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -384,6 +435,9 @@ function suggest_groups() {
                 for (let i = 5; i < groups_9[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_9[get_suggest_str][2][i] + "]    "
                 }
+                if (groups_9[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
+                }
             }
 
         } else if (hosts == 10 && groups_10.hasOwnProperty(get_suggest_str)) {
@@ -391,11 +445,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_10[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_10[get_suggest_str][0][i] + "]    "
             }
+            if (groups_10[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_10[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_10[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_10[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_10[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_10[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -403,6 +463,9 @@ function suggest_groups() {
                 document.getElementById("suggestion_3").innerHTML += "Antall grupper: " + groups_10[get_suggest_str][2][3] + " - "
                 for (let i = 5; i < groups_10[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_10[get_suggest_str][2][i] + "]    "
+                }
+                if (groups_10[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
                 }
             }
 

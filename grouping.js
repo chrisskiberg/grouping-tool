@@ -242,11 +242,17 @@ function suggest_groups() {
             for (let i = 5; i < groups_3[get_suggest_str][0].length; i++) {
                 document.getElementById("suggestion_1").innerHTML += "[" + groups_3[get_suggest_str][0][i] + "]    "
             }
+            if (groups_3[get_suggest_str][0][4]==1) {
+                document.getElementById("suggestion_1").innerHTML += " - Tellbar"
+            }
 
             if (groups_3[get_suggest_str][1] != NaN) {
                 document.getElementById("suggestion_2").innerHTML += "Antall grupper: " + groups_3[get_suggest_str][1][3] + " - "
                 for (let i = 5; i < groups_3[get_suggest_str][1].length; i++) {
                     document.getElementById("suggestion_2").innerHTML += "[" + groups_3[get_suggest_str][1][i] + "]    "
+                }
+                if (groups_3[get_suggest_str][1][4]==1) {
+                    document.getElementById("suggestion_2").innerHTML += " - Tellbar"
                 }
             }
 
@@ -254,6 +260,9 @@ function suggest_groups() {
                 document.getElementById("suggestion_3").innerHTML += "Antall grupper: " + groups_3[get_suggest_str][2][3] + " - "
                 for (let i = 5; i < groups_3[get_suggest_str][2].length; i++) {
                     document.getElementById("suggestion_3").innerHTML += "[" + groups_3[get_suggest_str][2][i] + "]    "
+                }
+                if (groups_3[get_suggest_str][2][4]==1) {
+                    document.getElementById("suggestion_3").innerHTML += " - Tellbar"
                 }
             }
 

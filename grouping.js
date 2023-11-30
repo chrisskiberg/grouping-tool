@@ -208,6 +208,8 @@ function suggest_groups() {
     document.getElementById("suggestion_1").innerHTML = ""
     document.getElementById("suggestion_2").innerHTML = ""
     document.getElementById("suggestion_3").innerHTML = ""
+    document.getElementById("suggestion_4").innerHTML = ""
+
 
 
     if (3 <= participants / hosts && hosts != 0) {
@@ -236,6 +238,31 @@ function suggest_groups() {
         document.getElementById("suggestion_3").innerHTML = "Om dette ikke fungerer er ikke tallene i databasen"
     } else if (hosts != 0 && 3 <= hosts && hosts <= 10 && 4 <= participants && participants <= 30) {
 
+        if (Math.floor(participants / hosts)==2) {
+
+            var grouping2 = []
+            var min_participants_per_host2 = Math.floor(participants / hosts)
+            console.log("hei")
+            for (let i = 0; i < hosts; i++) {
+                grouping2.push([1, min_participants_per_host2])
+            }
+    
+            var remaining_participants2 = participants - min_participants_per_host2 * hosts
+    
+            for (let i = 0; i < remaining_participants2; i++) {
+                grouping2[i][1] += 1
+            }
+            console.log(grouping2.length)
+
+            document.getElementById("suggestion_4").innerHTML = "Antall grupper: " + grouping2.length + " - "
+            for (let i = 0; i < grouping2.length; i++) {
+                document.getElementById("suggestion_4").innerHTML += "[" + grouping2[i] + "]    "
+            }
+            document.getElementById("suggestion_4").innerHTML += " - Tellbar"
+
+        }
+
+        
         get_suggest_str = "g" + hosts.toString() + "_" + participants.toString();
         if (hosts == 3 && groups_3.hasOwnProperty(get_suggest_str)) {
             document.getElementById("suggestion_1").innerHTML += "Antall grupper: " + groups_3[get_suggest_str][0][3] + " - "
